@@ -30,6 +30,7 @@ class AppComp extends Component {
             <div>
                 <CNavBar />
                 <Container>
+                {this.props.children}
                     <Row>
                         <Col xs="12">My App</Col>
                     </Row>

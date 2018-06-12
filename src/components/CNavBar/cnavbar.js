@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import {
     Collapse,
     Navbar,
@@ -10,7 +11,8 @@ import {
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
-    DropdownItem
+    DropdownItem,
+    Container
 } from 'reactstrap';
 
 class CNavBar extends Component {
@@ -32,37 +34,42 @@ class CNavBar extends Component {
 
     render() {
         return (
-            <Navbar color="dark" light expand="md">
-                <NavbarBrand href="/">reactstrap</NavbarBrand>
-                <NavbarToggler onClick={this.toggle} />
-                <Collapse isOpen={this.state.isOpen} navbar>
-                    <Nav className="ml-auto" navbar>
-                        <NavItem>
-                            <NavLink href="/components/">Components</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-                        </NavItem>
-                        <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle nav caret>
-                                Options
+            <div>
+                <Navbar color="dark" light expand="md">
+                    <NavbarBrand href="/">reactstrap</NavbarBrand>
+                    <NavbarToggler onClick={this.toggle} />
+                    <Collapse isOpen={this.state.isOpen} navbar>
+                        <Nav className="ml-auto" navbar>
+                            <NavItem>
+                                <NavLink tag={Link} to="/">HOME</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink tag={Link} to="/about">About</NavLink>
+                            </NavItem>
+                            <UncontrolledDropdown nav inNavbar>
+                                <DropdownToggle nav caret>
+                                    Options
                 </DropdownToggle>
-                            <DropdownMenu right>
-                                <DropdownItem>
-                                    Option 1
+                                <DropdownMenu right>
+                                    <DropdownItem>
+                                        Option 1
                   </DropdownItem>
-                                <DropdownItem>
-                                    Option 2
+                                    <DropdownItem>
+                                        Option 2
                   </DropdownItem>
-                                <DropdownItem divider />
-                                <DropdownItem>
-                                    Reset
+                                    <DropdownItem divider />
+                                    <DropdownItem>
+                                        Reset
                   </DropdownItem>
-                            </DropdownMenu>
-                        </UncontrolledDropdown>
-                    </Nav>
-                </Collapse>
-            </Navbar>
+                                </DropdownMenu>
+                            </UncontrolledDropdown>
+                        </Nav>
+                    </Collapse>
+                </Navbar>
+                <Container>
+                    {this.props.children}
+                </Container>
+            </div>
         );
     }
 }

@@ -7,7 +7,6 @@ const initialState = {
 const appReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.LOAD_COUNTRIES:
-        console.log(action)
             return Object.assign({}, state, {countries: action.data });
         default:
             return state;

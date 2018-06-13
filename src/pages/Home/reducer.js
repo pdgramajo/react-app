@@ -4,12 +4,13 @@ const initialState = {
     countries: []
 }
 
-const appReducer = (state = initialState, action) => {
+const homeReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.LOAD_COUNTRIES:
-            return Object.assign({}, state, {countries: action.data });
+            return Object.assign({}, state, { countries: action.data });
         default:
             return state;
     }
 }
-export default appReducer;
+
+export default homeReducer;

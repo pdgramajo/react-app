@@ -1,15 +1,16 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import App from "./components/App";
-import { About } from "./components/About";
+import { Route } from "react-router-dom";
+import { About } from "./pages/About";
+import { Contact } from "./pages/Contact";
+import { Home } from "./pages/Home";
+
 
 export default () => {
     return (
-        <BrowserRouter>
-            <Switch>
-                <Route exact path="/" component={App} />
-                <Route path="/about" component={About} />
-            </Switch>
-        </BrowserRouter>
+        <div>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route exact path="/contact" component={Contact} />
+        </div>
     )
 }

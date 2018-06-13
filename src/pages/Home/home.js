@@ -1,42 +1,21 @@
-import React, { Component } from 'react';
-import * as appActions from './actions';
+import React, { Component } from 'react'
+import { Row, Col,Table } from 'reactstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import CNavBar from '../CNavBar';
-import { Table, Container, Row, Col } from 'reactstrap';
-class AppComp extends Component {
+import * as homeActions from './actions';
 
-    constructor(props) {
-        super(props);
-
-        this.toggle = this.toggle.bind(this);
-        this.state = {
-            isOpen: false
-        };
-    }
+ class HomeComp extends Component {
 
     componentDidMount() {
-        this.props.actions.app.getCountries();
-    }
-
-    toggle() {
-        this.setState({
-            isOpen: !this.state.isOpen
-        });
+        this.props.actions.home.getCountries();
     }
 
     render() {
         return (
-            <div>
-                <CNavBar />
-                <Container>
-                {this.props.children}
-                    <Row>
-                        <Col xs="12">My App</Col>
-                    </Row>
-                    <Row>
-                        <Col xs="12">
-                            <Table hover>
+            <Row>
+                <Col xs="12"> <h1>Home Page</h1></Col>
+                <Col xs="12"> 
+                <Table hover>
                                 <thead>
                                     <tr>
                                         <th>#</th>
@@ -57,26 +36,23 @@ class AppComp extends Component {
 
                                 </tbody>
                             </Table>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
-        );
+                </Col>
+            </Row>
+        )
     }
 }
 
 const mapStateToProps = (state) => ({
-    countries: state.appReducer.countries
+    countries: state.homeReducer.countries
 });
 
 const mapDispatchToProps = (dispatch) => {
     const actions = {
-        app: bindActionCreators(appActions, dispatch)
+        home: bindActionCreators(homeActions, dispatch)
     };
     return { actions };
 };
 
+const Home = connect(mapStateToProps, mapDispatchToProps)(HomeComp);
 
-const App = connect(mapStateToProps, mapDispatchToProps)(AppComp);
-
-export default App;
+export default Home;

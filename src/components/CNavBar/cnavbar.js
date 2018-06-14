@@ -34,7 +34,7 @@ class CNavBar extends Component {
 
     render() {
         return (
-                <Navbar color="light" light fixed='top' expand="md">
+                <Navbar color="dark" dark fixed='top' expand="md">
                     <NavbarBrand tag={Link} to="/">HOME</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>

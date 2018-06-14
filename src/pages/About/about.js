@@ -11,7 +11,7 @@ class About extends Component {
 
     render() {
         return (
-            <Container fluid="true">
+            <Container >
                 <Row>
                     <Col xs="12">
                         <h1>About Page</h1>

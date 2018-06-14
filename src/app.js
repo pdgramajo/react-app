@@ -11,7 +11,7 @@ export default class App extends Component {
             <BrowserRouter>
                 <div>
                     <CNavBar />
-                    <Container className="MT70"> 
+                    <Container className="MT70" fluid={true}> 
                         <RoutesList />
                     </Container>
                 </div>

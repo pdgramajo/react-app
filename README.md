@@ -1,5 +1,7 @@
 # react-app
 react app with webpack 4
+ 
+npm start
 
 # Server
 
@@ -10,7 +12,16 @@ react app with webpack 4
 # ESLINT
 The preferred way to include one of these characters is to use the HTML escape code.
 
-> can be replaced with &gt;
-" can be replaced with &quot;, &ldquo; or &rdquo;
-' can be replaced with &apos;, &lsquo; or &rsquo;
-} can be replaced with &#125;
+1. > can be replaced with &gt;
+2. " can be replaced with &quot;, &ldquo; or &rdquo;
+3. ' can be replaced with &apos;, &lsquo; or &rsquo;
+4. } can be replaced with &#125;
+
+# ESLINT VS code config
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "html"
+    ],
+    "eslint.alwaysShowStatus": true,
+    "eslint.autoFixOnSave": true

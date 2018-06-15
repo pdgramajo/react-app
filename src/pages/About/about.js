@@ -5,7 +5,6 @@ import {
   CardTitle, CardSubtitle, Button, Container
 } from 'reactstrap';
 
-
 const About = () => (
   <Container >
     <Row>

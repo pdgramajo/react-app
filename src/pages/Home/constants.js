@@ -1,3 +1,1 @@
-const LOAD_COUNTRIES = 'LOAD_COUNTRIES';
-
-export default { LOAD_COUNTRIES };
+export const LOAD_COUNTRIES = 'LOAD_COUNTRIES';

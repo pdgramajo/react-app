@@ -1,2 +1,3 @@
 import About from './about';
-export {About};
+
+export default { About };

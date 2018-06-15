@@ -1,2 +1,3 @@
 import Contact from './contact';
-export { Contact };
+
+export default { Contact };

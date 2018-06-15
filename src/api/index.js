@@ -1,14 +1,13 @@
 import axios from 'axios';
 
 const host = 'http://localhost:3000/';
-const namespace = 'api/';
+// const namespace = 'api/';
 
-const BASE_PATH = host;//+ namespace;
+const BASE_PATH = host; // + namespace;
 
 class Api {
-
   static Get(url, params) {
-    var config = {
+    const config = {
       params,
       baseURL: BASE_PATH
     };
@@ -20,11 +19,9 @@ class Api {
         })
         .catch((error) => {
           reject(error);
-        })
+        });
     });
   }
-
-
 }
 
 export default Api;

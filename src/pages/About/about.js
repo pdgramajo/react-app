@@ -1,75 +1,66 @@
-import React from 'react';
-
+import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import {
   Row, Col, Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button, Container
 } from 'reactstrap';
+import * as aboutActions from './actions';
+import Detail from "./detail";
+class AboutComp extends Component {
 
-const About = () => (
-  <Container >
-    <Row>
-      <Col xs="12">
-        <h1>About Page</h1>
-      </Col>
-      <Col xs="12">
-        <Row>
-          <Col xs="6" md="4" lg="3">
-            <Card>
-              <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-              <CardBody>
-                <CardTitle>Card title</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>
-                    Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
-                </CardText>
-                <Button color="secondary" size="lg" block>Button</Button>
-              </CardBody>
-            </Card>
-          </Col>
-          <Col xs="6" md="4" lg="3">
-            <Card>
-              <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-              <CardBody>
-                <CardTitle>Card title</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>
-                    Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
-                </CardText>
-                <Button color="secondary" size="lg" block>Button</Button>
-              </CardBody>
-            </Card>
-          </Col>
-          <Col xs="6" md="4" lg="3">
-            <Card>
-              <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-              <CardBody>
-                <CardTitle>Card title</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>
-                    Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
-                </CardText>
-                <Button color="secondary" size="lg" block>Button</Button>
-              </CardBody>
-            </Card>
-          </Col>
-          <Col xs="6" md="4" lg="3">
-            <Card>
-              <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-              <CardBody>
-                <CardTitle>Card title</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>
-                    Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
-                </CardText>
-                <Button color="secondary" size="lg" block>Button</Button>
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
+  componentDidMount() {
+    this.props.actions.about.getProducts();
+  }
 
-      </Col>
-    </Row>
-  </Container>
-);
+  render() {
+    return (
+      <Row>
+        <Col xs="12">
+          <h1>About Page</h1>
+        </Col>
+        <Col xs="12">
+          <Row>
+            {this.props.products.map(item => {
+              return (
+                <Col xs="12" md="4" lg="3" key={item.id} className="PT5" >
+                  <Card>
+                    <CardImg top width="100%" src={item.image} height="300px" alt="Card image cap" />
+                    <CardBody>
+                      <CardTitle>{item.name} {item.model} </CardTitle>
+                      <CardSubtitle>{item.year} {item.class}</CardSubtitle>
+                      <CardText className="cardTextCustom">
+                        {item.description}
+                      </CardText>
+                      <Detail buttonLabel="Show Details"/>
+                    </CardBody>
+                  </Card>
+                </Col>
+                );
+            })
+            }
+          </Row>
+
+        </Col>
+      </Row>
+
+    )
+  }
+};
+
+
+
+const mapStateToProps = state => ({
+  products: state.aboutReducer.products
+});
+
+const mapDispatchToProps = dispatch => {
+  const actions = {
+    about: bindActionCreators(aboutActions, dispatch)
+  }
+  return { actions };
+}
+
+const About = connect(mapStateToProps, mapDispatchToProps)(AboutComp)
 
 export default About;

@@ -1,1 +1,2 @@
 export const LOAD_PRODUCTS = 'LOAD_PRODUCTS';
+export const GET_PRODUCT_BY_ID = 'GET_PRODUCT_BY_ID';

@@ -11,17 +11,15 @@ class DetailComp extends Component {
         this.state = {
             open: false
         };
-        this.openModal = this.openModal.bind(this);
-        this.closeModal = this.closeModal.bind(this);
     }
 
-    openModal() {
+    openModal = () => {
         console.log('set state to open modal');
         this.setState({
             open: true
         });
     }
-    closeModal() {
+    closeModal = () => {
         this.setState({
             open: false
         });

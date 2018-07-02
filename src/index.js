@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import configureStore from './store';
 import App from './app';
+import "./web.config";
 
 const store = configureStore();
 

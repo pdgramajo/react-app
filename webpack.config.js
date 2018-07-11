@@ -23,6 +23,17 @@ module.exports = {
       {
         test: /\.(config)$/,
         loader: 'file-loader?name=[name].[ext]'
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
       }
     ]
   },

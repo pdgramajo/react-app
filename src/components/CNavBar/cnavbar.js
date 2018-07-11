@@ -9,6 +9,7 @@ import {
   NavItem,
   NavLink
 } from 'reactstrap';
+import fLogo from "../../img/f-logo.png";
 
 class CNavBar extends Component {
   constructor(props) {
@@ -28,8 +29,10 @@ class CNavBar extends Component {
 
   render() {
     return (
-      <Navbar color="dark" dark fixed="top" expand="md">
-        <NavbarBrand tag={Link} to="/">HOME</NavbarBrand>
+      <Navbar color="light" light expand="md">
+        <NavbarBrand tag={Link} to="/">
+          <img src={fLogo} alt="" />
+        </NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>

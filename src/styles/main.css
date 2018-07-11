@@ -1520,7 +1520,7 @@
   }
   
   .primary-checkbox input:checked + label {
-    background: url(../img/elements/primary-check.png) no-repeat center center/cover;
+    /* background: url(../img/elements/primary-check.png) no-repeat center center/cover; */
     border: none;
   }
   
@@ -1558,7 +1558,7 @@
   }
   
   .confirm-checkbox input:checked + label {
-    background: url(../img/elements/success-check.png) no-repeat center center/cover;
+    /* background: url(../img/elements/success-check.png) no-repeat center center/cover; */
     border: none;
   }
   
@@ -1601,7 +1601,7 @@
   }
   
   .disabled-checkbox input:checked + label {
-    background: url(../img/elements/disabled-check.png) no-repeat center center/cover;
+    /* background: url(../img/elements/disabled-check.png) no-repeat center center/cover; */
     border: none;
   }
   
@@ -1639,7 +1639,7 @@
   }
   
   .primary-radio input:checked + label {
-    background: url(../img/elements/primary-radio.png) no-repeat center center/cover;
+    /* background: url(../img/elements/primary-radio.png) no-repeat center center/cover; */
     border: none;
   }
   
@@ -1677,7 +1677,7 @@
   }
   
   .confirm-radio input:checked + label {
-    background: url(../img/elements/success-radio.png) no-repeat center center/cover;
+    /* background: url(../img/elements/success-radio.png) no-repeat center center/cover; */
     border: none;
   }
   
@@ -1720,7 +1720,7 @@
   }
   
   .disabled-radio input:checked + label {
-    background: url(../img/elements/disabled-radio.png) no-repeat center center/cover;
+    /* background: url(../img/elements/disabled-radio.png) no-repeat center center/cover; */
     border: none;
   }
   
@@ -1910,7 +1910,7 @@
   
   body {
     background-attachment: fixed;
-    background-image: url("../img/body-bg.jpg");
+    background-image: url("../img/lluvia.jpg");
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2092,9 +2092,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 75%;
+    width: 100%;
     height: 100%;
-    background: url(../img/s.jpg) no-repeat center center/cover;
+    /* background: url(../img/s.jpg) no-repeat center center/cover; */
     z-index: 1;
   }
   
@@ -2109,7 +2109,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 75%;
+    width: 100%;
     height: 100%;
     z-index: 2;
     opacity: .9;
@@ -2155,15 +2155,15 @@
   }
   
   .active-banner-slider .owl-controls .owl-dots .owl-dot:nth-child(1) {
-    background: url(../img/sd1.jpg) no-repeat center center/cover;
+    /* background: url(../img/sd1.jpg) no-repeat center center/cover; */
   }
   
   .active-banner-slider .owl-controls .owl-dots .owl-dot:nth-child(2) {
-    background: url(../img/sd2.jpg) no-repeat center center/cover;
+    /* background: url(../img/sd2.jpg) no-repeat center center/cover; */
   }
   
   .active-banner-slider .owl-controls .owl-dots .owl-dot:nth-child(3) {
-    background: url(../img/sd3.jpg) no-repeat center center/cover;
+    /* background: url(../img/sd3.jpg) no-repeat center center/cover; */
   }
   
   @media (max-width: 767px) {
@@ -2395,7 +2395,7 @@
     right: 0;
     width: 50%;
     height: 100%;
-    background: url(../img/story-bg.jpg) no-repeat center center/cover;
+    /* background: url(../img/story-bg.jpg) no-repeat center center/cover; */
     z-index: 1;
   }
   
@@ -2491,7 +2491,7 @@
     left: 0;
     width: 50%;
     height: 100%;
-    background: url(../img/story-bg.jpg) no-repeat center center/cover;
+    /* background: url(../img/story-bg.jpg) no-repeat center center/cover; */
     z-index: 1;
   }
   
@@ -2623,10 +2623,24 @@
     }
   }
   
+  .page-container{
+    padding-top: 0px;
+    background-image: -moz-linear-gradient(135deg, #49e3ce 0%, #9920ed 100%);
+    background-image: -webkit-linear-gradient(135deg, #49e3ce 0%, #9920ed 100%);
+    background-image: -ms-linear-gradient(135deg, #49e3ce 0%, #9920ed 100%);
+  }
   .footer-widget-area {
     padding-top: 70px;
   }
-  
+  .footer-widget-area-footer {
+    padding-top: 0px;
+    background-image: -moz-linear-gradient(135deg, #49e3ce 0%, #9920ed 100%);
+    background-image: -webkit-linear-gradient(135deg, #49e3ce 0%, #9920ed 100%);
+    background-image: -ms-linear-gradient(135deg, #49e3ce 0%, #9920ed 100%);
+  }
+  .main-wrapper-first > nav {
+    margin-right:0px !important;
+  }
   .single-widget {
     margin-top: 30px;
   }
@@ -2786,4 +2800,124 @@
   .switch-wrap p {
     margin: 0;
   }
+
+  /******************************************************/
+
+  .base-container{
+    width: 75%;
+  }
+
+  .wrapper1 {
+    width: 68.75%;
+    margin: 0 auto;
+  }
+  @media (min-width: 1200px) {
+    .wrapper1 {
+      width: 75%;
+    }
+  }
   
+  @media (max-width: 1199px) {
+    .wrapper1 {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .wrapper1 {
+      width: 97%;
+    }
+  }
+
+
+.wrapper2 {
+  position: relative;
+}
+
+.wrapper2 .wrapper3 {
+  position: relative;
+  min-height: 540px;
+}
+
+.wrapper2 .wrapper3:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: url(../img/s.jpg) no-repeat center center/cover; */
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  .wrapper2 .wrapper3:after {
+    width: 100%;
+  }
+}
+
+.wrapper2 .wrapper3:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: .9;
+}
+
+@media (max-width: 767px) {
+  .wrapper2 .wrapper3:before {
+    width: 100%;
+  }
+}
+
+.wrapper2 .wrapper3 .wrapper4 {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+}
+
+.wrapper2 .wrapper3 .wrapper4 .content {
+  width: 60% ;
+}
+
+@media (max-width: 767px) {
+  .wrapper2 .wrapper3 .content {
+    width: 100%;
+  }
+}
+
+.wrapper2 .wrapper3 .content h1 {
+  font-weight: 600;
+  line-height: 1.25em;
+}
+
+.wrapper2 .owl-controls {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25%;
+  height: 100%;
+}
+
+.wrapper2 .owl-controls .owl-dots {
+  height: 100%;
+}
+
+.wrapper2 .owl-controls .owl-dots .owl-dot {
+  height: 33.33%;
+}
+
+@media (max-width: 767px) {
+  .wrapper2 .owl-controls {
+    display: none;
+  }
+}
+
+.wrapper2 .wrapper3:before{
+  background-image: -moz-linear-gradient(135deg, #49e3ce 0%, #9920ed 100%);
+  background-image: -webkit-linear-gradient(135deg, #49e3ce 0%, #9920ed 100%);
+  background-image: -ms-linear-gradient(135deg, #49e3ce 0%, #9920ed 100%);
+}

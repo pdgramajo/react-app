@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 const Contact = () => (
-  <Container>
+  <div className='featured-area'>
     <Row>
       <Col xs="12"> <h1>Contact Page</h1></Col>
       <Form>
@@ -87,7 +87,7 @@ const Contact = () => (
         </FormGroup>
       </Form>
     </Row>
-  </Container>
+  </div>
 );
 
 export default Contact;

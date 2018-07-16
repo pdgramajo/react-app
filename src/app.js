@@ -5,6 +5,7 @@ import RoutesList from './routes';
 import CNavBar from './components/CNavBar';
 import './styles/main.css';
 import './styles/myStyle.css';
+import 'font-awesome/css/font-awesome.css';
 import fLogo from "./img/f-logo.png";
 import MainContainer from './components/container';
 

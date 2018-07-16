@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'index_bundle.js'
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -28,18 +28,34 @@ module.exports = {
         test: /\.(png|jpg|gif)$/,
         use: [
           {
-            loader: 'url-loader',
+            loader: 'file-loader',
             options: {
-              limit: 8192
+              limit: 8192,
+              name: 'img/[name].[hash:7].[ext]'
             }
           }
         ]
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          }
+        }]
       }
+
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html'
     })
-  ]
+  ],
+  performance: {
+    maxEntrypointSize: 1012000,
+    maxAssetSize: 1012000
+  }
 };
